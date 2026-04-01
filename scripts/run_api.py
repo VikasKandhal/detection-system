@@ -1,7 +1,11 @@
-import sys
-
-sys.path.insert(0, 'path/to/your/module')
-
+import os
 import uvicorn
 
-# Rest of your code...
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(
+        "api.main:app",
+        host="0.0.0.0",
+        port=port,
+        reload=False
+    )
