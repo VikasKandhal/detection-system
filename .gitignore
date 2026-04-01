@@ -1,0 +1,44 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+venv/
+.env.*
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large model artifacts (exclude unnecessary)
+models/random_forest.pkl
+models/all_model_results.pkl
+models/shap_values_*.pkl
+
+# Optional: exclude extra models
+models/logistic_regression.pkl
+
+# Keep only essential models
+!models/lightgbm_best.pkl
+!models/xgboost_best.pkl
+!models/preprocessing_artifacts.pkl
+!models/optimal_thresholds.pkl
+!models/model_comparison.json
+
+# 🚨 Large datasets (VERY IMPORTANT)
+*.csv
+*.zip
+*.parquet
+
+# Ignore raw data folder but allow structure
+data/*
+!data/.gitkeep
